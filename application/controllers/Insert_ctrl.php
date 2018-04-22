@@ -12,27 +12,23 @@ class Insert_ctrl extends CI_Controller {
 
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-		//Validating Name Field
-		$this->form_validation->set_rules('dname', 'Username', 'required|min_length[5]|max_length[15]');
+		//Validating Student Number Field
+		$this->form_validation->set_rules('dsnum', 'Student Number', 'required|min_length[9]|max_length[10]');
 
-		//Validating Email Field
-		$this->form_validation->set_rules('demail', 'Email', 'required|valid_email');
+		//Validating Username Field
+		$this->form_validation->set_rules('dsnum', 'Username', 'required|min_length[5]|max_length[15]');
 
-		//Validating Mobile no. Field
-		$this->form_validation->set_rules('dmobile', 'Mobile No.', 'required|regex_match[/^[0-9]{10}$/]');
-
-		//Validating Address Field
-		$this->form_validation->set_rules('daddress', 'Address', 'required|min_length[10]|max_length[50]');
+		//Validating Password Field
+		$this->form_validation->set_rules('dpass', 'Password', 'required|');
 
 		if ($this->form_validation->run() == FALSE) {
 		$this->load->view('insert_view');
 		} else {
 			//Setting values for tabel columns
 			$data = array(
-			'Student_Name' => $this->input->post('dname'),
-			'Student_Email' => $this->input->post('demail'),
-			'Student_Mobile' => $this->input->post('dmobile'),
-			'Student_Address' => $this->input->post('daddress')
+			'Student_Number' => $this->input->post('dsnum'),
+			'Username' => $this->input->post('duname'),
+			'Password' => $this->input->post('dpass'),
 			);
 			//Transfering data to Model
 			$this->insert_model->form_insert($data);
