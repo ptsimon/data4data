@@ -36,6 +36,7 @@ class Insert_ctrl extends CI_Controller {
 				'password' => $this->input->post('dpass'),
 			);
 			//Transfering data to Model
+			$this->load->view('insert_view', $data);
 			$success = $this->Insert_model->form_insert($data);
 			if($success == true) {
 				$data['message'] = 'Data Inserted Successfully';
