@@ -4,7 +4,7 @@ class Insert_ctrl extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('insert_model');
+		$this->load->model('Insert_model');
 	}
 	function index() {
 		//Including validation library
@@ -22,9 +22,11 @@ class Insert_ctrl extends CI_Controller {
 		$this->form_validation->set_rules('dpass', 'Password', 'required|min_length[8]|max_length[25]');
 
 		if ($this->form_validation->run() == FALSE) {
-		$this->load->view('insert_view');
+			$this->load->view('insert_view');
+
 		} else {
 			//Setting values for tabel columns
+			$this->load->library('database');
 			$data = array(
 				// 'id' => NULL,
 				// 'ts' => NULL,
@@ -33,7 +35,7 @@ class Insert_ctrl extends CI_Controller {
 				'password' => $this->input->post('dpass'),
 			);
 			//Transfering data to Model
-			$success = $this->insert_model->form_insert($data);
+			$success = $this->Insert_model->form_insert($data);
 			if($success == true) {
 				$data['message'] = 'Data Inserted Successfully';
 			} else {
