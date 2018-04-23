@@ -27,6 +27,7 @@ class Insert_ctrl extends CI_Controller {
 		} else {
 			//Setting values for tabel columns
 			// $this->load->library('database');
+			// echo "hello";
 			$data = array(
 				// 'id' => NULL,
 				// 'ts' => NULL,
