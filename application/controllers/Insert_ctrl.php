@@ -26,13 +26,19 @@ class Insert_ctrl extends CI_Controller {
 		} else {
 			//Setting values for tabel columns
 			$data = array(
+				// 'id' => NULL,
+				// 'ts' => NULL,
 				'student_num' => $this->input->post('dsnum'),
 				'username' => $this->input->post('duname'),
 				'password' => $this->input->post('dpass'),
 			);
 			//Transfering data to Model
-			$this->insert_model->form_insert($data);
-			$data['message'] = 'Data Inserted Successfully';
+			$success = $this->insert_model->form_insert($data);
+			if($success == true) {
+				$data['message'] = 'Data Inserted Successfully';
+			} else {
+				$data['message'] = 'Data not inserted successfully';
+			}
 			//Loading View
 			$this->load->view('insert_view', $data);
 		}

@@ -7,7 +7,15 @@ class Insert_model extends CI_Model{
 	}
 	function form_insert($data){
 		// Inserting in Table(students) of Database(college)
-		$this->db->insert('registration', $data);
+		$query = $this->db->insert('reg2', $data);
+		if($query)
+		  {
+		    return true;  
+		  }
+		  else
+		  {
+		    return false; 
+		  }
 	}
 }
 
