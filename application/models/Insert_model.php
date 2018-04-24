@@ -23,7 +23,7 @@ class Insert_model extends CI_Model{
             'username' => $username,
             'password' => $password
         );
-        $query = $this->db->insert('registration', $data);
+        $query = $this->db->insert('signup', $data);
         
         # insert to radcheck table
         $data = array(
