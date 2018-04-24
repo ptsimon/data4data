@@ -51,9 +51,6 @@
 		    <h2 class="ui teal image header">
 		      <div class="content">
 		        Register to use Data For Data!
-		        <?php if (isset($message)) { ?>
-				<CENTER><h3 style="color:green;">Username Registered!</h3></CENTER><br>
-				<?php } ?>
 		      </div>
 		    </h2>
 		    <!-- <form class="ui large form"> -->
@@ -90,11 +87,19 @@
 		            <input id="pass2" type="password" name="pass2" placeholder="Re-type Password" value="<?php echo set_value('pass2'); ?>">
 		          </div>
 		        </div>
-		        <button id="btnSignUp" name="btnSignUp" class="ui fluid large teal submit button" value="Save" type="submit" form="changepass">Sign me up!</button>
+		        <button id="btnsignup" name="btnsignup" class="ui fluid large teal submit button" value="signup" type="submit" form="changepass">Sign me up!</button>
 				<?php echo form_close(); ?>
 		      </div>
 
-		      <div class="ui error message"></div>
+		      <?php if (isset($message) and $message == "Success!") { echo $message?>
+		      <div class="ui positive message">
+				You are Registered!
+			  </div>
+			<?php } elseif (isset($message) and $message == "Failed!") { ?>
+				<div class="ui error message">
+				Something went wrong. Please try again. (or contact Pola or Tammy)
+			  </div>
+			<?php } ?>
 
 		    <!-- </form> -->
 		  </div>

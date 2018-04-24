@@ -11,9 +11,9 @@ class Signup_model extends CI_Model{
     {    
         $this->load->database();
 
-    	$student_num = $this->input->post('dsnum');
-    	$username = $this->input->post('duname');
-    	$password = $this->input->post('dpass');
+    	$student_num = $this->input->post('snum');
+    	$username = $this->input->post('uname');
+    	$password = $this->input->post('pass');
 
     	# insert to registration table
         $data = array(

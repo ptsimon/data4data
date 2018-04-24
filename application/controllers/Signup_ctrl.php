@@ -20,16 +20,20 @@ class Signup_ctrl extends CI_Controller {
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('signup_view');
         } else {
-        	//Transfering data to Model
-            $this->load->model('Signup_model');
-            $success = $this->Signup_model->insert_user();
-			if($success == true) {
-				$data['message'] = 'Data Inserted Successfully';
-			} else {
-				$data['message'] = 'Data not inserted successfully';
-			}            
-			//Loading View
-			$this->load->view('signup_view', $data);
+            if ($this->input->post('btnsignup') == "signup") {
+
+            	//Transfering data to Model
+                $this->load->model('Signup_model');
+                $success = $this->Signup_model->insert_user();
+    			if($success == true) {
+    				$data['message'] = 'Success!';
+    			} 
+                else {
+    				$data['message'] = 'Failed!';
+    			}            
+    			//Loading View
+    			$this->load->view('signup_view', $data);
+            }
         }
     }
 
