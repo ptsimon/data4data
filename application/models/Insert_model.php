@@ -9,17 +9,51 @@ class Insert_model extends CI_Model{
 
 	    public function insert_user()
     {    
+        $this->load->database();
+
+    	$student_num = $this->input->post('dsnum')
+    	$username = $this->input->post('duname')
+    	$password = $this->input->post('dpass')
+
+    	# insert to registration table
         $data = array(
         	'id' => NULL,
         	'ts' => NULL,
-            'student_num' => $this->input->post('dsnum'),
-            'username' => $this->input->post('duname'),
-            'password' => $this->input->post('dpass')
+            'student_num' => $student_num,
+            'username' => $username,
+            'password' => $password
         );
+        $query = $this->db->insert('registration', $data);
         
-        $this->load->database();
-        // users is the name of the db table you are inserting in
-        $query = return $this->db->insert('registration', $data);
+        # insert to radcheck table
+        $data = array(
+        	'id' => NULL,
+			'username' => $student_num,
+			'attribute' => 'Cleartext-Password',
+			'op' => ':=',
+			'value' => $password
+        );
+        $this->db->insert('radheck', $data);
+
+        $data = array(
+        	'id' => NULL,
+			'username' => $student_num,
+			'attribute' => 'Mikrotik-Recv-Limit',
+			'op' => ':=',
+			'value' => '0'
+        );
+
+        # insert to radreply table
+        $data = array(
+        	'id' => NULL,
+			'username' => $student_num,
+			'attribute' => 'Mikrotik-Rate-Limit',
+			'op' => '=',
+			'value' => '0k/1k'
+        );
+        $this->db->insert('radheck', $data);
+
+
 		if($query) {
 		    return true;  
 		} else {
