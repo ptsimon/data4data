@@ -28,30 +28,31 @@ class Insert_model extends CI_Model{
         # insert to radcheck table
         $data = array(
         	'id' => NULL,
-			'username' => $student_num,
+			'username' => $username,
 			'attribute' => 'Cleartext-Password',
 			'op' => ':=',
 			'value' => $password
         );
-        $this->db->insert('radheck', $data);
+        $this->db->insert('radcheck', $data);
 
         $data = array(
         	'id' => NULL,
-			'username' => $student_num,
+			'username' => $username,
 			'attribute' => 'Mikrotik-Recv-Limit',
 			'op' => ':=',
 			'value' => '0'
         );
+        $this->db->insert('radcheck', $data);
 
         # insert to radreply table
         $data = array(
         	'id' => NULL,
-			'username' => $student_num,
+			'username' => $username,
 			'attribute' => 'Mikrotik-Rate-Limit',
 			'op' => '=',
 			'value' => '0k/1k'
         );
-        $this->db->insert('radheck', $data);
+        $this->db->insert('radreply', $data);
 
 
 		if($query) {
