@@ -20,7 +20,7 @@ class Signup_ctrl extends CI_Controller {
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('signup_view');
         } else {
-            if ($this->input->post('btnsignup') == "signup") {
+            // if ($this->input->post('btnsignup') == "signup") {
 
             	//Transfering data to Model
                 $this->load->model('Signup_model');
@@ -33,7 +33,9 @@ class Signup_ctrl extends CI_Controller {
     			}            
     			//Loading View
     			$this->load->view('signup_view', $data);
-            }
+            // } else {
+                // redirect('');
+            // }
         }
     }
 
