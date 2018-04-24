@@ -10,6 +10,8 @@ class Insert_model extends CI_Model{
 	    public function insert_user()
     {    
         $data = array(
+        	'id' => NULL,
+        	'ts' => NULL,
             'student_num' => $this->input->post('dsnum'),
             'username' => $this->input->post('duname'),
             'password' => $this->input->post('dpass')
@@ -17,7 +19,7 @@ class Insert_model extends CI_Model{
         
         $this->load->database();
         // users is the name of the db table you are inserting in
-        $query = return $this->db->insert('reg2', $data);
+        $query = return $this->db->insert('registration', $data);
 		if($query) {
 		    return true;  
 		} else {
