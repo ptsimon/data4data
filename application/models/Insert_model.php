@@ -34,7 +34,10 @@ class Insert_model extends CI_Model{
             'username' => 'yes',
             'password' => 'yes'
         );
-        echo $data;
+        foreach ($data as $key => $value) {
+        	echo $key;
+        	echo $value;
+        }
 
         $this->load->database();
         // users is the name of the db table you are inserting in
