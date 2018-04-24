@@ -27,12 +27,12 @@ class Insert_model extends CI_Model{
 	    public function insert_user()
     {    
         $data = array(
-            // 'student_num' => $this->input->post('dsnum'),
-            // 'username' => $this->input->post('duname'),
-            // 'password' => $this->input->post('dpass')
-            'student_num' => 'yes',
-            'username' => 'yes',
-            'password' => 'yes'
+            'student_num' => $this->input->post('dsnum'),
+            'username' => $this->input->post('duname'),
+            'password' => $this->input->post('dpass')
+            // 'student_num' => 'yes',
+            // 'username' => 'yes',
+            // 'password' => 'yes'
         );
         foreach ($data as $key => $value) {
         	echo $key;
