@@ -87,7 +87,7 @@
 		            <input id="pass2" type="password" name="pass2" placeholder="Re-type Password" value="<?php echo set_value('pass2'); ?>">
 		          </div>
 		        </div>
-		        <button id="submit" name="submit" class="ui fluid large teal submit button" value="Submit" type="Submit" form="changepass">Sign me up!</button>
+		        <button id="btnsubmit" name="btnsubmit" class="ui fluid large teal submit button" value="Submit" type="Submit" form="changepass">Sign me up!</button>
 				<?php echo form_close(); ?>
 		      </div>
 

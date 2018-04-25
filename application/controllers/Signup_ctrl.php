@@ -17,10 +17,13 @@ class Signup_ctrl extends CI_Controller {
 
         $this->form_validation->set_rules('pass2', 'Re-type Password', 'required|min_length[8]|max_length[25]');
 
+        echo "belpbelp";
+
         if ($this->form_validation->run() === FALSE) {
+            echo "falseeeeee";
             $this->load->view('signup_view');
         } else {
-            if ($this->input->post('btnsignup') == "Submit") {
+            if ($this->input->post('btnsubmit') == "Submit") {
                 echo "submitttttt";
             	//Transfering data to Model
                 $this->load->model('Signup_model');
