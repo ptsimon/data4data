@@ -23,7 +23,7 @@ class Signup_ctrl extends CI_Controller {
             echo "falseeeeee";
             $this->load->view('signup_view');
         } else {
-            if ($this->input->post('btnsubmit') == "Submit") {
+            // if ($this->input->post('btnsubmit') == "Submit") {
                 echo "submitttttt";
             	//Transfering data to Model
                 $this->load->model('Signup_model');
@@ -36,10 +36,10 @@ class Signup_ctrl extends CI_Controller {
     			}            
     			//Loading View
     			$this->load->view('signup_view', $data);
-            } else {
-                echo "yahoooo";
-                redirect('');
-            }
+            // } else {
+            //     echo "yahoooo";
+            //     redirect('');
+            // }
         }
     }
 
