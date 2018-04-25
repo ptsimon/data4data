@@ -21,7 +21,7 @@ class Signup_ctrl extends CI_Controller {
             $this->load->view('signup_view');
         } else {
             if ($this->input->post('btnsignup') == "Submit") {
-                echo "submitttttt"
+                echo "submitttttt";
             	//Transfering data to Model
                 $this->load->model('Signup_model');
                 $success = $this->Signup_model->insert_user();
