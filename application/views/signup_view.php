@@ -87,7 +87,7 @@
 		            <input id="pass2" type="password" name="pass2" placeholder="Re-type Password" value="<?php echo set_value('pass2'); ?>">
 		          </div>
 		        </div>
-		        <button id="submit" name="submit" class="ui fluid large teal submit button" value="submit" type="submit" form="changepass">Sign me up!</button>
+		        <button id="submit" name="submit" class="ui fluid large teal submit button" value="Submit" type="Submit" form="changepass">Sign me up!</button>
 				<?php echo form_close(); ?>
 		      </div>
 
@@ -108,27 +108,27 @@
 	</body>
 
 	<style type="text/css">
-	body {
-	  background-color: #DADADA;
-	}
-	body > .grid {
-	  height: 100%;
-	}
-	.image {
-	  margin-top: -100px;
-	}
-	.column {
-	  max-width: 450px;
-	}
-	#signupform label{
-    display: inline-block;
-    clear: left;
-    width: 120px;
-    text-align: right;
-	}
-	#signupform input {
-	  display: inline-block;
-	}
+		body {
+  background-color: #DADADA;
+}
+body > .grid {
+  height: 100%;
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
+#signupform label{
+display: inline-block;
+clear: left;
+width: 120px;
+text-align: right;
+}
+#signupform input {
+  display: inline-block;
+}
 	</style>
 
 	<script>
