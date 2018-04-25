@@ -9,11 +9,14 @@ class Signup_model extends CI_Model{
 
 	    public function insert_user()
     {    
-        $this->load->database();
+        // $this->load->database();
 
     	$student_num = $this->input->post('snum');
     	$username = $this->input->post('uname');
     	$password = $this->input->post('pass');
+    	echo $student_num;
+    	echo $username;
+    	echo $password;
 
     	# insert to registration table
         $data = array(
