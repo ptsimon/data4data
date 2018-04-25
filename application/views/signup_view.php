@@ -88,7 +88,7 @@
 		          </div>
 		        </div>
 		        <!-- <button id="btnsubmit" name="btnsubmit" class="ui fluid large teal submit button" value="Submit" type="Submit" form="changepass">Sign me up!</button> -->
-		        <?php echo form_submit(array('id' => 'btnsubmit' 'class' => 'ui fluid large teal submit button', 'value' => 'Submit')); ?>
+		        <?php echo form_submit(array('id' => 'btnsubmit', 'class' => 'ui fluid large teal submit button', 'value' => 'Submit')); ?>
 				<?php echo form_close(); ?>
 		      </div>
 
