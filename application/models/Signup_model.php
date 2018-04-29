@@ -14,9 +14,6 @@ class Signup_model extends CI_Model{
     	$student_num = $this->input->post('snum');
     	$username = $this->input->post('uname');
     	$password = $this->input->post('pass');
-    	echo $student_num;
-    	echo $username;
-    	echo $password;
 
     	# insert to signup table
         $data = array(
@@ -28,34 +25,34 @@ class Signup_model extends CI_Model{
         );
         $query = $this->db->insert('signup', $data);
         
-   //      # insert to radcheck table
-   //      $data = array(
-   //      	'id' => NULL,
-			// 'username' => $username,
-			// 'attribute' => 'Cleartext-Password',
-			// 'op' => ':=',
-			// 'value' => $password
-   //      );
-   //      $this->db->insert('radcheck', $data);
+        # insert to radcheck table
+        $data = array(
+        	'id' => NULL,
+			'username' => $username,
+			'attribute' => 'Cleartext-Password',
+			'op' => ':=',
+			'value' => $password
+        );
+        $this->db->insert('radcheck', $data);
 
-   //      $data = array(
-   //      	'id' => NULL,
-			// 'username' => $username,
-			// 'attribute' => 'Mikrotik-Recv-Limit',
-			// 'op' => ':=',
-			// 'value' => '0'
-   //      );
-   //      $this->db->insert('radcheck', $data);
+        $data = array(
+        	'id' => NULL,
+			'username' => $username,
+			'attribute' => 'Mikrotik-Recv-Limit',
+			'op' => ':=',
+			'value' => '0'
+        );
+        $this->db->insert('radcheck', $data);
 
-   //      # insert to radreply table
-   //      $data = array(
-   //      	'id' => NULL,
-			// 'username' => $username,
-			// 'attribute' => 'Mikrotik-Rate-Limit',
-			// 'op' => '=',
-			// 'value' => '0k/1k'
-   //      );
-   //      $this->db->insert('radreply', $data);
+        # insert to radreply table
+        $data = array(
+        	'id' => NULL,
+			'username' => $username,
+			'attribute' => 'Mikrotik-Rate-Limit',
+			'op' => '=',
+			'value' => '0k/1k'
+        );
+        $this->db->insert('radreply', $data);
 
 
 		if($query) {

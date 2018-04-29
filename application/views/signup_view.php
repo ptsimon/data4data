@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		
 		<!-- Site Properties -->
-		<title>Insert Data Into Database Using CodeIgniter Form</title>
+		<title>Data For Data Sign Up</title>
 		<link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" />
@@ -16,35 +16,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/form.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/transition.js"></script>
-		<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/scripts.js'); ?>"></script> -->
+		<script type="text/javascript" src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
 
 	</head>
 
 
 	<body>
-		<!-- <div id="container">
-			<?php echo form_open('signup_ctrl'); ?>
-			<h1>Register to use Data For Data!</h1><hr/>
-
-			<?php if (isset($message)) { ?>
-				<CENTER><h3 style="color:green;">Username Registered!</h3></CENTER><br>
-			<?php } ?>
-
-			<?php echo form_label('Student No:'); ?> <?php echo form_error('dsnum'); ?><br />
-			<?php echo form_input(array('id' => 'dsnum', 'name' => 'dsnum')); ?><br />
-
-			<?php echo form_label('Username:'); ?> <?php echo form_error('duname'); ?><br />
-			<?php echo form_input(array('id' => 'duname', 'name' => 'duname')); ?><br />
-
-			<?php echo form_label('Password:'); ?> <?php echo form_error('dpass'); ?><br />
-			<?php echo form_input(array('id' => 'dpass', 'name' => 'dpass')); ?><br />
-
-			<?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
-			<?php echo form_close(); ?><br/>
-			
-			<div id="fugo">
-			</div>
-		</div> -->
 
 		<div class="ui middle aligned center aligned grid">
 		  <div class="column">
@@ -53,8 +30,6 @@
 		        Register to use Data For Data!
 		      </div>
 		    </h2>
-		    <!-- <form class="ui large form"> -->
-			<!-- <?php echo form_open('signup_ctrl'); ?> -->
 			<?php
 	      	$attributes = array("class" => "ui large form", "id" => "signupform");
 	      	echo form_open("signup_ctrl", $attributes);?>
@@ -92,7 +67,7 @@
 				<?php echo form_close(); ?>
 		      </div>
 
-		      <?php if (isset($message) and $message === "Success!") { echo $message?>
+		      <?php if (isset($message) and $message === "Success!") {?>
 		      <div class="ui positive message">
 				You are Registered!
 			  </div>
@@ -100,94 +75,11 @@
 				<div class="ui error message">
 				Something went wrong. Please try again. (or contact Pola or Tammy)
 			  </div>
-			<?php } else {?>
-				<div class="ui positive message">
-				WALEYYY BOI
-			  </div>
 			<?php } ?>
 
-
-		    <!-- </form> -->
 		  </div>
 		</div>
 
 	</body>
-
-	<script>
-	$(document)
-	.ready(function() {
-	  $('.ui.form')
-	    .form({
-	    inline: true,
-	    on: 'change',
-	      fields: {
-	      	snum: {
-	          identifier  : 'snum',
-	          rules: [
-	            {
-	              type   : 'empty',
-	              prompt : 'Please enter student number'
-	            }
-	          ]
-	        },
-	        uname: {
-	          identifier  : 'uname',
-	          rules: [
-	            {
-	              type   : 'empty',
-	              prompt : 'Please enter username'
-	            }
-	          ]
-	        },
-	        pass: {
-	          identifier  : 'pass',
-	          rules: [
-	            {
-	              type   : 'empty',
-	              prompt : 'Please enter password'
-	            },
-	            {
-	              type   : 'length[8]',
-	              prompt : 'Your password must be at least 8 characters'
-	            }
-	          ]
-	        },
-	        pass2: {
-	          identifier  : 'pass2',
-	          rules: [
-	            {
-	              type   : 'empty',
-	              prompt : 'Please re-enter password'
-	            },
-	            {
-	              type   : 'match[pass]',
-	              prompt : 'Your passwords do not match!'
-	            }
-	          ]
-	        }
-	      }
-	    })
-	  ;
-	})
-	;
-	</script>
-	<!-- <script>
-		$(function() {
-		    $('#btnsubmit').click(function() {
-		 
-		        $.ajax({
-		            url: '/signUp',
-		            data: $('form').serialize(),
-		            type: 'POST',
-		            success: function(response) {
-		                console.log(response);
-		            },
-		            error: function(error) {
-		                console.log(error);
-		            }
-		        });
-		    });
-		});
-			</script> -->
 
 </html>
