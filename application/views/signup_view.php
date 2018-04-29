@@ -87,20 +87,25 @@
 		            <input id="pass2" type="password" name="pass2" placeholder="Re-type Password" value="<?php echo set_value('pass2'); ?>">
 		          </div>
 		        </div>
-		        <!-- <button id="btnsubmit" name="btnsubmit" class="ui fluid large teal submit button" value="Submit" type="Submit" form="changepass">Sign me up!</button> -->
-		        <?php echo form_submit(array('id' => 'btnsubmit', 'class' => 'ui fluid large teal submit button', 'value' => 'Submit')); ?>
+		        <button id="btnsubmit" name="btnsubmit" class="ui fluid large teal submit button" value="Submit" type="Submit" form="signupform">Sign me up!</button>
+		        <!-- <?php echo form_submit(array('id' => 'btnsubmit', 'class' => 'ui fluid large teal submit button', 'value' => 'Submit')); ?> -->
 				<?php echo form_close(); ?>
 		      </div>
 
-		      <?php if (isset($message)) { 	?>
+		      <?php if (isset($message) and $message === "Success!") { echo $message?>
 		      <div class="ui positive message">
 				You are Registered!
 			  </div>
-			 <?php } elseif (isset($message) and $message == "Failed!") { ?>
-			 <div class="ui error message">
+			<?php } elseif (isset($message) and $message === "Failed!") { ?>
+				<div class="ui error message">
 				Something went wrong. Please try again. (or contact Pola or Tammy)
 			  </div>
+			<?php } else {?>
+				<div class="ui positive message">
+				WALEYYY BOI
+			  </div>
 			<?php } ?>
+
 
 		    <!-- </form> -->
 		  </div>
