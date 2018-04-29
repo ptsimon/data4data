@@ -92,14 +92,14 @@
 				<?php echo form_close(); ?>
 		      </div>
 
-		      <?php if (isset($message)) { ?>
+		      <?php if (isset($message)) { 	?>
 		      <div class="ui positive message">
 				You are Registered!
 			  </div>
-			<!-- <?php } elseif (isset($message) and $message == "Failed!") { ?>
-			 -->	<!-- <div class="ui error message">
+			 <?php } elseif (isset($message) and $message == "Failed!") { ?>
+			 <div class="ui error message">
 				Something went wrong. Please try again. (or contact Pola or Tammy)
-			  </div> -->
+			  </div>
 			<?php } ?>
 
 		    <!-- </form> -->
@@ -199,7 +199,7 @@ text-align: right;
 		            data: $('form').serialize(),
 		            type: 'POST',
 		            success: function(response) {
-		                cons	ole.log(response);
+		                console.log(response);
 		            },
 		            error: function(error) {
 		                console.log(error);
