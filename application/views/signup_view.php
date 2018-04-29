@@ -9,14 +9,14 @@
 		<!-- Site Properties -->
 		<title>Insert Data Into Database Using CodeIgniter Form</title>
 		<link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
-		<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/styles.css'); ?>" /> -->
 		<link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/styles.css'); ?>" />
 
-		<script type="text/javascript" src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/form.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/transition.js"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
 
 	</head>
 
