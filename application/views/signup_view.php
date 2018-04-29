@@ -11,12 +11,12 @@
 		<link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/styles.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/styles.css'); ?>" /> 
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/form.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/transition.js"></script>
-		<script type="text/javascript" src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
+		<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/scripts.js'); ?>"></script> -->
 
 	</head>
 
@@ -107,5 +107,82 @@
 		</div>
 
 	</body>
+
+	<script>
+	$(document)
+	.ready(function() {
+	  $('.ui.form')
+	    .form({
+	    inline: true,
+	    on: 'change',
+	      fields: {
+	      	snum: {
+	          identifier  : 'snum',
+	          rules: [
+	            {
+	              type   : 'empty',
+	              prompt : 'Please enter student number'
+	            }
+	          ]
+	        },
+	        uname: {
+	          identifier  : 'uname',
+	          rules: [
+	            {
+	              type   : 'empty',
+	              prompt : 'Please enter username'
+	            }
+	          ]
+	        },
+	        pass: {
+	          identifier  : 'pass',
+	          rules: [
+	            {
+	              type   : 'empty',
+	              prompt : 'Please enter password'
+	            },
+	            {
+	              type   : 'length[8]',
+	              prompt : 'Your password must be at least 8 characters'
+	            }
+	          ]
+	        },
+	        pass2: {
+	          identifier  : 'pass2',
+	          rules: [
+	            {
+	              type   : 'empty',
+	              prompt : 'Please re-enter password'
+	            },
+	            {
+	              type   : 'match[pass]',
+	              prompt : 'Your passwords do not match!'
+	            }
+	          ]
+	        }
+	      }
+	    })
+	  ;
+	})
+	;
+	</script>
+	<script>
+		$(function() {
+		    $('#btnsubmit').click(function() {
+		 
+		        $.ajax({
+		            url: '/signUp',
+		            data: $('form').serialize(),
+		            type: 'POST',
+		            success: function(response) {
+		                console.log(response);
+		            },
+		            error: function(error) {
+		                console.log(error);
+		            }
+		        });
+		    });
+		});
+			</script>
 
 </html>
