@@ -108,28 +108,4 @@
 
 	</body>
 
-	<style type="text/css">
-		body {
-  background-color: #DADADA;
-}
-body > .grid {
-  height: 100%;
-}
-.image {
-  margin-top: -100px;
-}
-.column {
-  max-width: 450px;
-}
-#signupform label{
-display: inline-block;
-clear: left;
-width: 120px;
-text-align: right;
-}
-#signupform input {
-  display: inline-block;
-}
-	</style>
-
 </html>
