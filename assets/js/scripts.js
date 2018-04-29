@@ -1,6 +1,4 @@
 $(function(){
-	$(document)
-	.ready(function() {
 	  $('.ui.form')
 	    .form({
 	    inline: true,
@@ -51,24 +49,20 @@ $(function(){
 	          ]
 	        }
 	      }
-	    })
-	  ;
-	})
-	;
-		$(function() {
-		    $('#btnsubmit').click(function() {
-		 
-		        $.ajax({
-		            url: '/signUp',
-		            data: $('form').serialize(),
-		            type: 'POST',
-		            success: function(response) {
-		                console.log(response);
-		            },
-		            error: function(error) {
-		                console.log(error);
-		            }
-		        });
-		    });
+	    });
+
+	$('#btnsubmit').click(function() {
+
+		$.ajax({
+			url: '/signUp',
+			data: $('form').serialize(),
+			type: 'POST',
+			success: function(response) {
+				console.log(response);
+			},
+			error: function(error) {
+				console.log(error);
+			}
 		});
+	});
 });
