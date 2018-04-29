@@ -56,7 +56,7 @@ $(function(){
 	})
 	;
 		$(function() {
-		    $('#btnSignUp').click(function() {
+		    $('#btnsubmit').click(function() {
 		 
 		        $.ajax({
 		            url: '/signUp',
