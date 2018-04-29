@@ -166,7 +166,7 @@
 	})
 	;
 	</script>
-	<script>
+	<!-- <script>
 		$(function() {
 		    $('#btnsubmit').click(function() {
 		 
@@ -183,6 +183,6 @@
 		        });
 		    });
 		});
-			</script>
+			</script> -->
 
 </html>

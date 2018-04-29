@@ -24,22 +24,27 @@ class Signup_ctrl extends CI_Controller {
             $this->load->view('signup_view');
         } else {
             if ($this->input->post('btnsubmit') == "Submit") {
-                echo "submitttttt";
-            	//Transfering data to Model
-                $this->load->model('Signup_model');
-                $success = $this->Signup_model->insert_user();
-    			if($success == true) {
-    				$data['message'] = 'Success!';
-    			} 
-                else {
-    				$data['message'] = 'Failed!';
-    			}            
-    			//Loading View
-    			$this->load->view('signup_view', $data);
+       //          echo "submitttttt";
+       //      	//Transfering data to Model
+       //          $this->load->model('Signup_model');
+       //          $success = $this->Signup_model->insert_user();
+    			// if($success == true) {
+    			// 	$data['message'] = 'Success!';
+    			// } 
+       //          else {
+    			// 	$data['message'] = 'Failed!';
+    			// }            
+    			// //Loading View
+                echo "trulalu";
+    			// $this->load->view('signup_view', $data);
+                $this->load->view('signup_view');
             } else {
                 echo "yahoooo";
-                redirect('');
+                // redirect('');
+                $this->load->view('signup_view');
             }
+            echo "trulalu";
+            $this->load->view('signup_view');
         }
     }
 
