@@ -38,7 +38,7 @@ class Signup_ctrl extends CI_Controller {
     			$this->load->view('signup_view', $data);
             } else {
                 echo "pwettt";
-                $this->load->view('signup_view', $data);
+                $this->load->view('signup_view');
             }
         // }
     }
