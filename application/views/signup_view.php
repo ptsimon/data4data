@@ -25,6 +25,15 @@
 
 		<div class="ui middle aligned center aligned grid">
 		  <div class="column">
+		  	<div class="ui huge info message">
+			  <h2 class="ui header">
+			  <i class="download icon"></i>
+			  <div class="content">
+			    <a href="https://drive.google.com/uc?export=download&id=14-oi_D6AowUi5Y7sFDGtshshaleNGY-Q" download>CLICK TO DOWNLOAD THE APK AND INSTALL</a>
+			  </div>
+			</h2>
+			</div>
+		  	
 		    <h2 class="ui teal image header">
 		      <div class="content">
 		        Register to use Data For Data!
