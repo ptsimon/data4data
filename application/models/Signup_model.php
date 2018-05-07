@@ -45,14 +45,22 @@ class Signup_model extends CI_Model{
         $this->db->insert('radcheck', $data);
 
         # insert to radreply table
+        # commented out, now using radgroureply
+   //      $data = array(
+   //      	'id' => NULL,
+			// 'username' => $username,
+			// 'attribute' => 'Mikrotik-Rate-Limit',
+			// 'op' => '=',
+			// 'value' => '0k/1k'
+   //      );
+   //      $this->db->insert('radreply', $data);
+
         $data = array(
-        	'id' => NULL,
-			'username' => $username,
-			'attribute' => 'Mikrotik-Rate-Limit',
-			'op' => '=',
-			'value' => '0k/1k'
+            'username' => $username,
+            'groupname' => 'bnets'
+            'priority' => '1'
         );
-        $this->db->insert('radreply', $data);
+        $this->db->insert('radusergroup', $data);
 
 
 		if($query) {
